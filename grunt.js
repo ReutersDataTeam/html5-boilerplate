@@ -29,6 +29,23 @@ module.exports = function(grunt) {
                     'css/app.css'
                 ],
                 dest: 'css/app.min.css'
+            },
+            header_dev_js: {
+                src: [
+                    'js/vendor/jquery-1.8.3.min.js',
+                    'js/vendor/modernizr-2.6.2.js'
+                ],
+                dest: 'js_compiled/app-header.js'
+            },
+            footer_dev_js: {
+                src: [
+                    'js/vendor/underscore-min.js',
+                    'js/templates.js',
+                    'js/app.js',
+                    'js/plugins.js',
+                    'js/main.js'
+                ],
+                dest: 'js_compiled/app-footer.js'
             }
         },
         less: {
