@@ -61,3 +61,12 @@ you want to write about your project.
 Anyone and everyone is welcome to
 [contribute](/h5bp/html5-boilerplate/blob/master/CONTRIBUTING.md). Hundreds
 of developers have helped make the HTML5 Boilerplate what it is today.
+
+## Changes
+
+This has been modified to use Grunt to combine files pre-deployment. 'Less' as an option for CSS. Requires Node JS and Grunt.
+
+`Brew install node`
+`npm install less grunt grunt-contrib-less grunt-contrib-jst`
+
+I had trouble initially getting grunt to find the less and jst packages, eventually had to copy them into the project folder under 'node_modules' -- May be important.
