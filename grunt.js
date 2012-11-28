@@ -81,7 +81,7 @@ module.exports = function(grunt) {
             },
             js: {
                 files: ['js/*.js'],
-                tasks: 'min:header_js min:footer_js',
+                tasks: 'min:header_js min:footer_js concat:header_dev_js concat:footer_dev_js',
             }
         }
     });
