@@ -1,13 +1,10 @@
-var header_js = {
-                src: [
+var header_js_src = [
                     'js/vendor/jquery-1.8.3.min.js',
                     'js/vendor/modernizr-2.6.2.js'
-                ],
-                dest: 'js_compiled/app-header.min.js'
-            }
+                ];
+                
 
-var footer_js = {
-                src: [
+var footer_js_src = [
                     'js/vendor/underscore-min.js',
                     'js/vendor/d3.v2.min.js',
                     'js/vendor/jquery.tipsy.js',
@@ -18,17 +15,21 @@ var footer_js = {
                     'js/income-chart/income-chart.js',
                     'js/main.js',
                     
-                ],
-                dest: 'js_compiled/app-footer.min.js'
-            }
+                ];
 
 module.exports = function(grunt) {
 
     // Project configuration.
     grunt.initConfig({
         min: {
-            header_js: header_js,
-            footer_js: footer_js
+            header_dev_js: {
+                src: header_js_src,
+                dest: 'js_compiled/app-header.min.js'
+            },
+            footer_dev_js:{
+                src: footer_js_src,
+                dest: 'js_compiled/app-footer.min.js'
+            }
         },
         concat: {
             css: {
@@ -40,8 +41,14 @@ module.exports = function(grunt) {
                 ],
                 dest: 'css/app.min.css'
             },
-            header_dev_js: header_js,
-            footer_dev_js: footer_js
+            header_dev_js: {
+                src: header_js_src,
+                dest: 'js_compiled/app-header.js'
+            },
+            footer_dev_js:{
+                src: footer_js_src,
+                dest: 'js_compiled/app-footer.js'
+            }
         },
         less: {
             all: {
