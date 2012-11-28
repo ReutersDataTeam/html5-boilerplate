@@ -22,11 +22,11 @@ module.exports = function(grunt) {
     // Project configuration.
     grunt.initConfig({
         min: {
-            header_dev_js: {
+            header_js: {
                 src: header_js_src,
                 dest: 'js_compiled/app-header.min.js'
             },
-            footer_dev_js:{
+            footer_js:{
                 src: footer_js_src,
                 dest: 'js_compiled/app-footer.min.js'
             }
