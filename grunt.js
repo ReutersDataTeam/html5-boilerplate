@@ -10,9 +10,7 @@ var footer_js_src = [
                     'js/vendor/jquery.tipsy.js',
                     'js/vendor/tabletop.js',
                     'js/templates.js',
-                    'js/app.js',
                     'js/plugins.js',
-                    'js/income-chart/income-chart.js',
                     'js/main.js',
                     
                 ];
