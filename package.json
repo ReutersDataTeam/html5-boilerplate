@@ -1,0 +1,9 @@
+{
+"name":"reuters-boilerplate",
+"version":"0.0.1",
+"dependencies": {
+    "grunt-contrib-jst": ">=0.3.2",
+    "grunt-contrib-less": ">=0.3.2"
+},
+"private":"true"
+}
