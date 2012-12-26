@@ -11,8 +11,7 @@ var footer_js_src = [
                     'js/vendor/tabletop.js',
                     'js/templates.js',
                     'js/plugins.js',
-                    'js/main.js',
-                    
+                    'js/main.js'                    
                 ];
 
 module.exports = function(grunt) {
