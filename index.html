@@ -26,14 +26,21 @@
         
         <script src="js_compiled/app-footer.js"></script>
 
-        <!-- Google Analytics: change UA-XXXXX-X to be your site's ID. -->
+        <!-- Google Analytics -->
         <script>
-            /**
-            var _gaq=[['_setAccount','UA-XXXXX-X'],['_trackPageview']];
+            //POLLING ACCOUNT FOR NOW...
+            var _gaq=[['_setAccount','UA-34312326-1'],['_trackPageview']];
             (function(d,t){var g=d.createElement(t),s=d.getElementsByTagName(t)[0];
             g.src=('https:'==location.protocol?'//ssl':'//www')+'.google-analytics.com/ga.js';
             s.parentNode.insertBefore(g,s)}(document,'script'));
-            **/
+            //TO TRACK PAGE VIEWS / EVENTS
+            function gaTrackEvent(category , action , label ){
+                label = (typeof label === "undefined") ? "" : label;
+                _gaq.push(['_trackEvent', category, action, label ])
+            }
+            function gaTrackPage(page){
+                _gaq.push(['_trackPageview', page ]);
+            }
         </script>
     </body>
 </html>
