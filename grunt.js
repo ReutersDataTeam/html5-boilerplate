@@ -1,17 +1,21 @@
 var header_js_src = [
-                    'js/vendor/jquery-1.8.3.min.js',
+                    'js/vendor/jquery.js',
                     'js/vendor/modernizr-2.6.2.js'
                 ];
                 
 
 var footer_js_src = [
-                    'js/vendor/underscore-min.js',
-                    'js/vendor/d3.v2.min.js',
+                    'js/vendor/jquery.js', //redundant with header. For embedding.
+                    'js/vendor/underscore.js',
+                    'js/vendor/backbone.js',
+                    'js/vendor/d3.js',
                     'js/vendor/jquery.tipsy.js',
                     'js/vendor/tabletop.js',
+                    'js/closureStart.frag.js', // defines a closure that wraps the following...
                     'js/templates.js',
                     'js/plugins.js',
-                    'js/main.js'                    
+                    'js/main.js',
+                    'js/closureEnd.frag.js' // ends closure, passes jquery (no conflict), _ (no conflict), backbone (no conflict), and d3.
                 ];
 
 module.exports = function(grunt) {
@@ -33,6 +37,7 @@ module.exports = function(grunt) {
                 src: [
                     'css/normalize.css',
                     'css/tipsy.css',
+                    'css/cleanslate.css',
                     'css/main.css',
                     'css/app.css'
                 ],
@@ -60,7 +65,7 @@ module.exports = function(grunt) {
                     processName: function(filename) {
                         return filename.split("/").pop().split(".")[0];
                     },
-                    namespace: 'App.Views'
+                    namespace: 'ReutersGraphics.Views'
                 },
                 files: {
                     'js/templates.js': ['jst/*.html']
