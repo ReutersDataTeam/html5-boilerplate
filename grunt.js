@@ -1,6 +1,6 @@
 var header_js_src = [
                     'js/vendor/jquery.js',
-                    'js/vendor/modernizr-2.6.2.js'
+                    'js/vendor/modernizr.js'
                 ];
                 
 
