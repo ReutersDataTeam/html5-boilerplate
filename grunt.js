@@ -22,13 +22,13 @@ module.exports = function(grunt) {
 
     // Project configuration.
     grunt.initConfig({
-        min: {
+        uglify: {
             header_js: {
-                src: header_js_src,
+                src: 'js_compiled/app-header.js',
                 dest: 'js_compiled/app-header.min.js'
             },
             footer_js:{
-                src: footer_js_src,
+                src: 'js_compiled/app-footer.js',
                 dest: 'js_compiled/app-footer.min.js'
             }
         },
@@ -75,23 +75,26 @@ module.exports = function(grunt) {
         watch: {
             css: {
                 files: ['less/*.less'],
-                tasks: 'less concat:css'
+                tasks: ['less', 'concat:css']
             },
             jst: {
                 files: ['jst/*.html'],
-                tasks: 'jst'
+                tasks: ['jst']
             },
             js: {
                 files: ['js/*.js'],
-                tasks: 'min:header_js min:footer_js concat:header_dev_js concat:footer_dev_js',
+                tasks: ['concat:header_dev_js', 'concat:footer_dev_js', 'uglify:header_js', 'uglify:footer_js'],
             }
         }
     });
 
     grunt.loadNpmTasks('grunt-contrib-jst');
     grunt.loadNpmTasks('grunt-contrib-less');
+    grunt.loadNpmTasks('grunt-contrib-uglify');
+    grunt.loadNpmTasks('grunt-contrib-concat');
+    grunt.loadNpmTasks('grunt-contrib-watch');
 
     // Default task.
-    grunt.registerTask('default', 'less jst min concat');
+    grunt.registerTask('default', ['less', 'jst', 'concat', 'uglify']);
 
 };
