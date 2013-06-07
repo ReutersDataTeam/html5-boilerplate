@@ -116,6 +116,9 @@ module.exports = function(grunt) {
                     access: 'private',
                     maxOperations: 20,
                     //encodePaths: true,
+                    headers: {
+                        'Cache-Control': 'public, max-age=900',
+                    },
                     debug: false,
                     gzip: true,
                     gzipExclude: ['.png', '.jpg', '.gif', '.jpeg']
