@@ -37,7 +37,6 @@ module.exports = function(grunt) {
                 src: [
                     'css/normalize.css',
                     'css/tipsy.css',
-                    'css/cleanslate.css',
                     'css/main.css',
                     'css/less/!(reset).css',
                 ],
