@@ -125,45 +125,45 @@ module.exports = function(grunt) {
                 upload:[
                     {
                         src: 'js_compiled/*',
-                        dest: '<%= aws.folder %>js_compiled/',
+                        dest: '<%= aws.dev.folder %>js_compiled/',
                     },
                     {
                         src: 'js_compiled/templates/*',
-                        dest: '<%= aws.folder %>js_compiled/templates/',
+                        dest: '<%= aws.dev.folder %>js_compiled/templates/',
                     },
                     {
                         src: 'js_compiled/templates/widgets/*',
-                        dest: '<%= aws.folder %>js_compiled/templates/widgets/',
+                        dest: '<%= aws.dev.folder %>js_compiled/templates/widgets/',
                     },
                     {
                         src: 'js_compiled/widgets/*',
-                        dest: '<%= aws.folder %>js_compiled/widgets/',
+                        dest: '<%= aws.dev.folder %>js_compiled/widgets/',
                     },
                     {
                         src: 'css/*',
-                        dest: '<%= aws.folder %>css/',
+                        dest: '<%= aws.dev.folder %>css/',
                     },
                     {
                         src: 'css/less/*',
-                        dest: '<%= aws.folder %>css/less/',
+                        dest: '<%= aws.dev.folder %>css/less/',
                     },
                     {
                         src: 'css/less/widgets/*',
-                        dest: '<%= aws.folder %>css/less/widgets/',
+                        dest: '<%= aws.dev.folder %>css/less/widgets/',
                     },
                     {
                         src: 'img/*',
-                        dest: '<%= aws.folder %>img/',
+                        dest: '<%= aws.dev.folder %>img/',
                         gzip: false,
                     },
                     {
                         src: 'assets/fonts/*',
-                        dest: '<%= aws.folder %>assets/fonts/',
+                        dest: '<%= aws.dev.folder %>assets/fonts/',
                         gzip: false,
                     },
                     {
                         src: '*',
-                        dest: '<%= aws.folder %>',
+                        dest: '<%= aws.dev.folder %>',
                     }
                 ]
             }
