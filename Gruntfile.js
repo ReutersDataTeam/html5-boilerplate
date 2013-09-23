@@ -68,7 +68,7 @@ module.exports = function(grunt) {
                     processName: function(filename) {
                         return filename.split("/").pop().split(".")[0];
                     },
-                    namespace: 'Reuters.Polls.Template'
+                    namespace: 'Reuters.Template'
                 },
                 files: {
                     'js/templates.js': ['jst/*.html']
