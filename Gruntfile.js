@@ -1,5 +1,4 @@
 var header_js_src = [
-    'js/vendor/jquery.js',
     'js/vendor/modernizr.js'
 ];
 
@@ -21,7 +20,8 @@ module.exports = function(grunt) {
 
     // Project configuration.
     grunt.initConfig({
-        aws: grunt.file.readJSON('grunt-aws.json'),
+        //for Amazon
+        //aws: grunt.file.readJSON('grunt-aws.json'),
         uglify: {
             header_js: {
                 src: 'js_compiled/app-header.js',
@@ -105,13 +105,13 @@ module.exports = function(grunt) {
             }
         },
         
-        
+        /*
         s3: {   
             dev:{
                 options:{
-                    key: '<%= aws.key %>',
-                    secret: '<%= aws.secret %>',
-                    bucket: '<%= aws.bucket %>',
+                    key: '<%= aws.dev.key %>',
+                    secret: '<%= aws.dev.secret %>',
+                    bucket: '<%= aws.dev.bucket %>',
                     access: 'private',
                     maxOperations: 20,
                     //encodePaths: true,
@@ -120,7 +120,7 @@ module.exports = function(grunt) {
                     },
                     debug: false,
                     gzip: true,
-                    gzipExclude: ['.png', '.jpg', '.gif', '.jpeg']
+                    gzipExclude: ['.png', '.jpg', '.gif', '.jpeg', '.ogg', '.ogv', '.mp3', '.mp4']
                 },
                 upload:[
                     {
@@ -144,6 +144,18 @@ module.exports = function(grunt) {
                         dest: '<%= aws.dev.folder %>css/',
                     },
                     {
+                        src: 'data/*',
+                        dest: '<%= aws.dev.folder %>data/',
+                    },
+                    {
+                        src: 'articles/*',
+                        dest: '<%= aws.dev.folder %>articles/',
+                    },
+                    {
+                        src: 'css/fonts/*',
+                        dest: '<%= aws.dev.folder %>css/fonts/',
+                    },
+                    {
                         src: 'css/less/*',
                         dest: '<%= aws.dev.folder %>css/less/',
                     },
@@ -152,8 +164,8 @@ module.exports = function(grunt) {
                         dest: '<%= aws.dev.folder %>css/less/widgets/',
                     },
                     {
-                        src: 'img/*',
-                        dest: '<%= aws.dev.folder %>img/',
+                        src: 'images/*',
+                        dest: '<%= aws.dev.folder %>images/',
                         gzip: false,
                     },
                     {
@@ -162,13 +174,98 @@ module.exports = function(grunt) {
                         gzip: false,
                     },
                     {
+                        src: 'media/*',
+                        dest: '<%= aws.dev.folder %>media/',
+                        gzip: false,
+                    },
+                    {
                         src: '*',
                         dest: '<%= aws.dev.folder %>',
                     }
                 ]
+            },
+            
+            
+            prod:{
+                options:{
+                    key: '<%= aws.prod.key %>',
+                    secret: '<%= aws.prod.secret %>',
+                    bucket: '<%= aws.prod.bucket %>',
+                    access: 'private',
+                    maxOperations: 20,
+                    //encodePaths: true,
+                    headers: {
+                        'Cache-Control': 'public, max-age=900',
+                    },
+                    debug: false,
+                    gzip: true,
+                    gzipExclude: ['.png', '.jpg', '.gif', '.jpeg', '.ogg', '.ogv', '.mp3', '.mp4']
+                },
+                upload:[
+                    {
+                        src: 'js_compiled/*',
+                        dest: '<%= aws.prod.folder %>js_compiled/',
+                    },
+                    {
+                        src: 'js_compiled/templates/*',
+                        dest: '<%= aws.prod.folder %>js_compiled/templates/',
+                    },
+                    {
+                        src: 'js_compiled/templates/widgets/*',
+                        dest: '<%= aws.prod.folder %>js_compiled/templates/widgets/',
+                    },
+                    {
+                        src: 'js_compiled/widgets/*',
+                        dest: '<%= aws.prod.folder %>js_compiled/widgets/',
+                    },
+                    {
+                        src: 'css/*',
+                        dest: '<%= aws.prod.folder %>css/',
+                    },
+                    {
+                        src: 'data/*',
+                        dest: '<%= aws.prod.folder %>data/',
+                    },
+                    {
+                        src: 'articles/*',
+                        dest: '<%= aws.prod.folder %>articles/',
+                    },
+                    {
+                        src: 'css/fonts/*',
+                        dest: '<%= aws.prod.folder %>css/fonts/',
+                    },
+                    {
+                        src: 'css/less/*',
+                        dest: '<%= aws.prod.folder %>css/less/',
+                    },
+                    {
+                        src: 'css/less/widgets/*',
+                        dest: '<%= aws.prod.folder %>css/less/widgets/',
+                    },
+                    {
+                        src: 'images/*',
+                        dest: '<%= aws.prod.folder %>images/',
+                        gzip: false,
+                    },
+                    {
+                        src: 'assets/fonts/*',
+                        dest: '<%= aws.prod.folder %>assets/fonts/',
+                        gzip: false,
+                    },
+                    {
+                        src: 'media/*',
+                        dest: '<%= aws.prod.folder %>media/',
+                        gzip: false,
+                    },
+                    {
+                        src: '*',
+                        dest: '<%= aws.prod.folder %>',
+                    }
+                ]
             }
+            
         }
-        
+        */
     });
 
     grunt.loadNpmTasks('grunt-contrib-jst');
@@ -176,9 +273,12 @@ module.exports = function(grunt) {
     grunt.loadNpmTasks('grunt-contrib-uglify');
     grunt.loadNpmTasks('grunt-contrib-concat');
     grunt.loadNpmTasks('grunt-contrib-watch');
-    grunt.loadNpmTasks('grunt-s3');
+    //grunt.loadNpmTasks('grunt-s3');
 
     // Default task.
     grunt.registerTask('default', ['less', 'jst', 'concat', 'uglify']);
+    //grunt.registerTask('all', ['less', 'jst', 'concat', 'uglify', 's3:dev']);
+    //grunt.registerTask('dev', ['less', 'jst', 'concat', 'uglify', 's3:dev']);
+    //grunt.registerTask('live', ['less', 'jst', 'concat', 'uglify', 's3:live']);
 
 };
