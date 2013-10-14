@@ -124,48 +124,37 @@ module.exports = function(grunt) {
                 },
                 upload:[
                     {
-                        src: 'js_compiled/*',
+                        src: 'js_compiled/**/*',
                         dest: '<%= aws.dev.folder %>js_compiled/',
+                        rel: 'js_compiled/'
                     },
                     {
-                        src: 'js_compiled/templates/*',
-                        dest: '<%= aws.dev.folder %>js_compiled/templates/',
-                    },
-                    {
-                        src: 'js_compiled/templates/widgets/*',
-                        dest: '<%= aws.dev.folder %>js_compiled/templates/widgets/',
-                    },
-                    {
-                        src: 'js_compiled/widgets/*',
-                        dest: '<%= aws.dev.folder %>js_compiled/widgets/',
-                    },
-                    {
-                        src: 'css/*',
-                        dest: '<%= aws.dev.folder %>css/',
-                    },
-                    {
-                        src: 'data/*',
-                        dest: '<%= aws.dev.folder %>data/',
+                        src: 'js/**/*',
+                        dest: '<%= aws.dev.folder %>js/',
+                        rel: 'js/'
                     },
                     {
                         src: 'articles/*',
                         dest: '<%= aws.dev.folder %>articles/',
                     },
                     {
-                        src: 'css/fonts/*',
-                        dest: '<%= aws.dev.folder %>css/fonts/',
+                        src: 'css/**/*',
+                        dest: '<%= aws.dev.folder %>css/',
+                        rel: 'css/'
                     },
                     {
-                        src: 'css/less/*',
-                        dest: '<%= aws.dev.folder %>css/less/',
+                        src: 'less/**/*',
+                        dest: '<%= aws.dev.folder %>css/',
+                        rel: 'less'
                     },
                     {
-                        src: 'css/less/widgets/*',
-                        dest: '<%= aws.dev.folder %>css/less/widgets/',
+                        src: 'data/*',
+                        dest: '<%= aws.dev.folder %>data/',
                     },
                     {
-                        src: 'images/*',
+                        src: 'images/**/*',
                         dest: '<%= aws.dev.folder %>images/',
+                        rel: 'images/',
                         gzip: false,
                     },
                     {
@@ -174,9 +163,10 @@ module.exports = function(grunt) {
                         gzip: false,
                     },
                     {
-                        src: 'media/*',
+                        src: 'media/**/*',
                         dest: '<%= aws.dev.folder %>media/',
                         gzip: false,
+                        rel: 'media/'
                     },
                     {
                         src: '*',
@@ -203,48 +193,37 @@ module.exports = function(grunt) {
                 },
                 upload:[
                     {
-                        src: 'js_compiled/*',
+                        src: 'js_compiled/**/*',
                         dest: '<%= aws.prod.folder %>js_compiled/',
+                        rel: 'js_compiled/'
                     },
                     {
-                        src: 'js_compiled/templates/*',
-                        dest: '<%= aws.prod.folder %>js_compiled/templates/',
-                    },
-                    {
-                        src: 'js_compiled/templates/widgets/*',
-                        dest: '<%= aws.prod.folder %>js_compiled/templates/widgets/',
-                    },
-                    {
-                        src: 'js_compiled/widgets/*',
-                        dest: '<%= aws.prod.folder %>js_compiled/widgets/',
-                    },
-                    {
-                        src: 'css/*',
-                        dest: '<%= aws.prod.folder %>css/',
-                    },
-                    {
-                        src: 'data/*',
-                        dest: '<%= aws.prod.folder %>data/',
+                        src: 'js/**/*',
+                        dest: '<%= aws.prod.folder %>js/',
+                        rel: 'js/'
                     },
                     {
                         src: 'articles/*',
                         dest: '<%= aws.prod.folder %>articles/',
                     },
                     {
-                        src: 'css/fonts/*',
-                        dest: '<%= aws.prod.folder %>css/fonts/',
+                        src: 'css/**/*',
+                        dest: '<%= aws.prod.folder %>css/',
+                        rel: 'css/'
                     },
                     {
-                        src: 'css/less/*',
-                        dest: '<%= aws.prod.folder %>css/less/',
+                        src: 'less/**/*',
+                        dest: '<%= aws.prod.folder %>css/',
+                        rel: 'less'
                     },
                     {
-                        src: 'css/less/widgets/*',
-                        dest: '<%= aws.prod.folder %>css/less/widgets/',
+                        src: 'data/*',
+                        dest: '<%= aws.prod.folder %>data/',
                     },
                     {
-                        src: 'images/*',
+                        src: 'images/**/*',
                         dest: '<%= aws.prod.folder %>images/',
+                        rel: 'images/',
                         gzip: false,
                     },
                     {
@@ -253,9 +232,10 @@ module.exports = function(grunt) {
                         gzip: false,
                     },
                     {
-                        src: 'media/*',
+                        src: 'media/**/*',
                         dest: '<%= aws.prod.folder %>media/',
                         gzip: false,
+                        rel: 'media/'
                     },
                     {
                         src: '*',
