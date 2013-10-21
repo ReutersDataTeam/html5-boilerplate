@@ -21,7 +21,7 @@ module.exports = function(grunt) {
     // Project configuration.
     grunt.initConfig({
         //for Amazon
-        //aws: grunt.file.readJSON('grunt-aws.json'),
+        //aws: grunt.file.readJSON('creds/grunt-aws.json'),
         uglify: {
             header_js: {
                 src: 'js_compiled/app-header.js',
