@@ -62,6 +62,10 @@ module.exports = function(grunt) {
                 }]
             },
         },
+        
+        
+        
+        
         jst: {
             all: {
                 options: {
@@ -90,6 +94,29 @@ module.exports = function(grunt) {
                 }]
             }
         },
+        
+        
+        
+        
+        compress: {
+            archive: {
+                options: {
+                    archive: './archive.zip',
+                    mode: 'zip'
+                },
+                files: [
+                    { src: ['./images/**/*', './assets/**/*', './img/**/*', './data/**/*', './css/**/*', './js_compiled/**/*', './articles/**/*', './js/**/*', './*.html', './*.ico' ] }
+                ]
+            }
+        },
+        
+        
+        
+        
+        
+        
+        
+        
         watch: {
             css: {
                 files: ['less/**/*.less'],
@@ -253,12 +280,13 @@ module.exports = function(grunt) {
     grunt.loadNpmTasks('grunt-contrib-uglify');
     grunt.loadNpmTasks('grunt-contrib-concat');
     grunt.loadNpmTasks('grunt-contrib-watch');
+    grunt.loadNpmTasks('grunt-contrib-compress');
     //grunt.loadNpmTasks('grunt-s3');
 
     // Default task.
     grunt.registerTask('default', ['less', 'jst', 'concat', 'uglify']);
-    //grunt.registerTask('all', ['less', 'jst', 'concat', 'uglify', 's3:dev']);
-    //grunt.registerTask('dev', ['less', 'jst', 'concat', 'uglify', 's3:dev']);
-    //grunt.registerTask('live', ['less', 'jst', 'concat', 'uglify', 's3:live']);
+    //grunt.registerTask('all', ['less', 'jst', 'concat', 'uglify', 'compress', 's3:dev']);
+    //grunt.registerTask('dev', ['less', 'jst', 'concat', 'uglify', 'compress', 's3:dev']);
+    //grunt.registerTask('live', ['less', 'jst', 'concat', 'uglify', 'compress', 's3:live']);
 
 };
