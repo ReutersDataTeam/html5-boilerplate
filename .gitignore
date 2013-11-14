@@ -4,3 +4,4 @@ node_modules/*
 grunt-aws.json
 .DS_Store
 creds/*
+archive.zip
