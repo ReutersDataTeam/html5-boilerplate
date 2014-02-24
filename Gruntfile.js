@@ -4,7 +4,7 @@ var header_js_src = [
 
 
 var footer_js_src = [
-    'js/vendor/jquery.js', //redundant with header. For embedding.
+    'js/vendor/jquery.js', 
     'js/vendor/underscore.js',
     'js/vendor/backbone.js',
     'js/vendor/d3.js',
