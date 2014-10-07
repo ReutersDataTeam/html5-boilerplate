@@ -4,7 +4,7 @@ var header_js_src = [
 
 
 var footer_js_src = [
-    'js/vendor/jquery.js', 
+    'js/vendor/jquery.js',
     'js/vendor/underscore.js',
     'js/vendor/backbone.js',
     'js/vendor/d3.js',
@@ -13,7 +13,7 @@ var footer_js_src = [
     'js/templates.js',
     'js/plugins.js',
     'js/main.js',
-    'js/closureEnd.frag.js' 
+    'js/closureEnd.frag.js'
 ];
 
 module.exports = function(grunt) {
@@ -24,12 +24,12 @@ module.exports = function(grunt) {
         //aws: grunt.file.readJSON('creds/grunt-aws.json'),
         uglify: {
             header_js: {
-                src: 'js_compiled/app-header.js',
-                dest: 'js_compiled/app-header.min.js'
+                src: 'js-compiled/app-header.js',
+                dest: 'js-compiled/app-header.min.js'
             },
             footer_js:{
-                src: 'js_compiled/app-footer.js',
-                dest: 'js_compiled/app-footer.min.js'
+                src: 'js-compiled/app-footer.js',
+                dest: 'js-compiled/app-footer.min.js'
             },
         },
         concat: {
@@ -44,11 +44,11 @@ module.exports = function(grunt) {
             },
             header_dev_js: {
                 src: header_js_src,
-                dest: 'js_compiled/app-header.js'
+                dest: 'js-compiled/app-header.js'
             },
             footer_dev_js:{
                 src: footer_js_src,
-                dest: 'js_compiled/app-footer.js'
+                dest: 'js-compiled/app-footer.js'
             },
         },
         less: {
@@ -62,10 +62,10 @@ module.exports = function(grunt) {
                 }]
             },
         },
-        
-        
-        
-        
+
+
+
+
         jst: {
             all: {
                 options: {
@@ -89,15 +89,15 @@ module.exports = function(grunt) {
                     expand: true,
                     cwd: 'jst',
                     src: ['**/*.html'],
-                    dest: 'js_compiled/templates',
+                    dest: 'js-compiled/templates',
                     ext: '.js',
                 }]
             }
         },
-        
-        
-        
-        
+
+
+
+
         compress: {
             archive: {
                 options: {
@@ -105,18 +105,18 @@ module.exports = function(grunt) {
                     mode: 'zip'
                 },
                 files: [
-                    { src: ['./images/**/*', './assets/**/*', './img/**/*', './data/**/*', './css/**/*', './js_compiled/**/*', './articles/**/*', './js/**/*', './*.html', './*.ico' ] }
+                    { src: ['./images/**/*', './assets/**/*', './img/**/*', './data/**/*', './css/**/*', './js-compiled/**/*', './articles/**/*', './js/**/*', './*.html', './*.ico' ] }
                 ]
             }
         },
-        
-        
-        
-        
-        
-        
-        
-        
+
+
+
+
+
+
+
+
         watch: {
             css: {
                 files: ['less/**/*.less'],
@@ -131,9 +131,9 @@ module.exports = function(grunt) {
                 tasks: [ 'concat:header_dev_js', 'concat:footer_dev_js', 'uglify:header_js', 'uglify:footer_js'],
             }
         },
-        
-        /*
-        s3: {   
+
+
+        s3: {
             dev:{
                 options:{
                     key: '<%= aws.dev.key %>',
@@ -151,9 +151,9 @@ module.exports = function(grunt) {
                 },
                 upload:[
                     {
-                        src: 'js_compiled/**/*',
-                        dest: '<%= aws.dev.folder %>js_compiled/',
-                        rel: 'js_compiled/'
+                        src: 'js-compiled/**/*',
+                        dest: '<%= aws.dev.folder %>js-compiled/',
+                        rel: 'js-compiled/'
                     },
                     {
                         src: 'js/**/*',
@@ -201,8 +201,8 @@ module.exports = function(grunt) {
                     }
                 ]
             },
-            
-            
+
+
             prod:{
                 options:{
                     key: '<%= aws.prod.key %>',
@@ -220,9 +220,9 @@ module.exports = function(grunt) {
                 },
                 upload:[
                     {
-                        src: 'js_compiled/**/*',
-                        dest: '<%= aws.prod.folder %>js_compiled/',
-                        rel: 'js_compiled/'
+                        src: 'js-compiled/**/*',
+                        dest: '<%= aws.prod.folder %>js-compiled/',
+                        rel: 'js-compiled/'
                     },
                     {
                         src: 'js/**/*',
@@ -270,9 +270,9 @@ module.exports = function(grunt) {
                     }
                 ]
             }
-            
+
         }
-        */
+
     });
 
     grunt.loadNpmTasks('grunt-contrib-jst');
